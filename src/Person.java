@@ -29,7 +29,7 @@ public class Person {
 
     }
 
-    public void setTickets (int tickets){
+    public void setTickets(int tickets) {
         this.tickets = tickets;
 
     }

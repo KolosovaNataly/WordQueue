@@ -7,17 +7,16 @@ public class Main {
     public static void main(String[] args) {
         Queue<Person> queueAttraction = new LinkedList<>(generateClients());
 
+
         while (!queueAttraction.isEmpty()) {
             Person currentPerson = queueAttraction.poll();
-
             int tickets = currentPerson.getTickets();
-
-            if (tickets>0){
+            if (tickets > 0) {
                 System.out.println(currentPerson.getName() + "  " + currentPerson.getSurname() + " прокатился \n");
-
-                currentPerson.setTickets(-- tickets);
-                queueAttraction.offer(currentPerson);
-
+                currentPerson.setTickets(--tickets);
+                if (tickets > 0) {
+                    queueAttraction.offer(currentPerson);
+                }
             }
         }
         System.out.println("Билеты закончились!");
